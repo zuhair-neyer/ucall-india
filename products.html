@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - UCALL India</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <h1>UCALL <span>INDIA</span></h1>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="products.html" class="nav-link active">Products</a>
+                    <a href="collections.html" class="nav-link">Collections</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-icons">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search products...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <button class="nav-btn" onclick="openLoginModal()">Login</button>
+                    <button class="nav-btn signup-btn" onclick="openSignupModal()">Sign Up</button>
+                    <div class="cart-icon" onclick="toggleCart()">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Premium Products</h1>
+            <p>Explore our finest collection of leather products</p>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="filters-container">
+                <div class="filters">
+                    <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
+                    <button class="filter-btn" onclick="filterProducts('bags')">Bags</button>
+                    <button class="filter-btn" onclick="filterProducts('wallets')">Wallets</button>
+                    <button class="filter-btn" onclick="filterProducts('belts')">Belts</button>
+                    <button class="filter-btn" onclick="filterProducts('accessories')">Accessories</button>
+                </div>
+                
+                <div class="sort-options">
+                    <select class="sort-select">
+                        <option value="featured">Sort by: Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="newest">Newest</option>
+                        <option value="popular">Most Popular</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Product 1 -->
+                <div class="product-card" data-category="bags">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/250x250/8B6F47/ffffff?text=Leather+Bag" alt="Premium Leather Bag">
+                        <span class="product-badge">New</span>
+                        <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Leather Messenger Bag</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(48 reviews)</span>
+                        </div>
+                        <p class="product-description">Genuine leather messenger bag with multiple compartments</p>
+                        <div class="product-price">
+                            <span class="price">₹4,999</span>
+                            <span class="original-price">₹6,999</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card" data-category="wallets">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/250x250/8B6F47/ffffff?text=Leather+Wallet" alt="Leather Wallet">
+                        <span class="product-badge">Sale</span>
+                        <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Classic Leather Wallet</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(156 reviews)</span>
+                        </div>
+                        <p class="product-description">Compact wallet with RFID protection</p>
+                        <div class="product-price">
+                            <span class="price">₹1,299</span>
+                            <span class="original-price">₹1,999</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card" data-category="belts">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/250x250/8B6F47/ffffff?text=Leather+Belt" alt="Leather Belt">
+                        <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Genuine Leather Belt</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(82 reviews)</span>
+                        </div>
+                        <p class="product-description">Premium quality leather belt with metal buckle</p>
+                        <div class="product-price">
+                            <span class="price">₹899</span>
+                            <span class="original-price">₹1,299</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card" data-category="accessories">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/250x250/8B6F47/ffffff?text=Leather+Watch" alt="Leather Watch Strap">
+                        <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Leather Watch Strap</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(34 reviews)</span>
+                        </div>
+                        <p class="product-description">Premium leather watch strap - universal fit</p>
+                        <div class="product-price">
+                            <span class="price">₹599</span>
+                            <span class="original-price">₹899</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card" data-category="bags">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/250x250/8B6F47/ffffff?text=Leather+Backpack" alt="Leather Backpack">
+                        <span class="product-badge">Popular</span>
+                        <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Leather Backpack</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(127 reviews)</span>
+                        </div>
+                        <p class="product-description">Spacious leather backpack for work and travel</p>
+                        <div class="product-price">
+                            <span class="price">₹5,999</span>
+                            <span class="original-price">₹8,999</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card" data-category="accessories">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/250x250/8B6F47/ffffff?text=Leather+Keychain" alt="Leather Keychain">
+                        <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Leather Keychain</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(203 reviews)</span>
+                        </div>
+                        <p class="product-description">Stylish leather keychain with custom engraving</p>
+                        <div class="product-price">
+                            <span class="price">₹299</span>
+                            <span class="original-price">₹499</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get exclusive deals and updates on new products</p>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button>Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About UCALL</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 UCALL India. All rights reserved. | Premium Leather Products</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function filterProducts(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const products = document.querySelectorAll('.product-card');
+            products.forEach(product => {
+                if (category === 'all' || product.dataset.category === category) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
