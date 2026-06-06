@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections - UCALL India</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <h1>UCALL <span>INDIA</span></h1>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="products.html" class="nav-link">Products</a>
+                    <a href="collections.html" class="nav-link active">Collections</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-icons">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search products...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <button class="nav-btn" onclick="openLoginModal()">Login</button>
+                    <button class="nav-btn signup-btn" onclick="openSignupModal()">Sign Up</button>
+                    <div class="cart-icon" onclick="toggleCart()">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Collections</h1>
+            <p>Explore our carefully curated leather collections</p>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section class="collections-section">
+        <div class="container">
+            <!-- Business Collection -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="https://via.placeholder.com/600x400/8B6F47/ffffff?text=Business+Collection" alt="Business Collection">
+                </div>
+                <div class="collection-content">
+                    <h2>Business Collection</h2>
+                    <p>Professional leather accessories designed for the modern businessperson. Our business collection features sophisticated designs that combine functionality with elegance.</p>
+                    <div class="collection-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Premium leather briefcases</li>
+                            <li><i class="fas fa-check"></i> Professional messenger bags</li>
+                            <li><i class="fas fa-check"></i> Business card holders</li>
+                            <li><i class="fas fa-check"></i> Executive portfolios</li>
+                        </ul>
+                    </div>
+                    <button class="collection-btn">Shop Collection</button>
+                </div>
+            </div>
+
+            <!-- Casual Collection -->
+            <div class="collection-card reverse">
+                <div class="collection-image">
+                    <img src="https://via.placeholder.com/600x400/8B6F47/ffffff?text=Casual+Collection" alt="Casual Collection">
+                </div>
+                <div class="collection-content">
+                    <h2>Casual Collection</h2>
+                    <p>Comfortable and stylish leather accessories for everyday use. Perfect for casual outings, weekend getaways, and relaxed urban lifestyle.</p>
+                    <div class="collection-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Casual leather bags</li>
+                            <li><i class="fas fa-check"></i> Cross-body bags</li>
+                            <li><i class="fas fa-check"></i> Drawstring backpacks</li>
+                            <li><i class="fas fa-check"></i> Vintage-style accessories</li>
+                        </ul>
+                    </div>
+                    <button class="collection-btn">Shop Collection</button>
+                </div>
+            </div>
+
+            <!-- Travel Collection -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="https://via.placeholder.com/600x400/8B6F47/ffffff?text=Travel+Collection" alt="Travel Collection">
+                </div>
+                <div class="collection-content">
+                    <h2>Travel Collection</h2>
+                    <p>Durable leather travel accessories built for adventurers. Our travel collection is designed for convenience, durability, and style on the go.</p>
+                    <div class="collection-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Travel backpacks</li>
+                            <li><i class="fas fa-check"></i> Duffle bags</li>
+                            <li><i class="fas fa-check"></i> Passport holders</li>
+                            <li><i class="fas fa-check"></i> Luggage tags</li>
+                        </ul>
+                    </div>
+                    <button class="collection-btn">Shop Collection</button>
+                </div>
+            </div>
+
+            <!-- Premium Collection -->
+            <div class="collection-card reverse">
+                <div class="collection-image">
+                    <img src="https://via.placeholder.com/600x400/8B6F47/ffffff?text=Premium+Collection" alt="Premium Collection">
+                </div>
+                <div class="collection-content">
+                    <h2>Premium Collection</h2>
+                    <p>Our most exclusive and luxurious leather products crafted from the finest materials. Each piece is a masterpiece of craftsmanship and design.</p>
+                    <div class="collection-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Hand-crafted premium bags</li>
+                            <li><i class="fas fa-check"></i> Limited edition designs</li>
+                            <li><i class="fas fa-check"></i> Personalization options</li>
+                            <li><i class="fas fa-check"></i> Lifetime warranty</li>
+                        </ul>
+                    </div>
+                    <button class="collection-btn">Shop Collection</button>
+                </div>
+            </div>
+
+            <!-- Accessories Collection -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="https://via.placeholder.com/600x400/8B6F47/ffffff?text=Accessories+Collection" alt="Accessories Collection">
+                </div>
+                <div class="collection-content">
+                    <h2>Accessories Collection</h2>
+                    <p>Complete your look with our carefully designed leather accessories. From belts to keychains, every piece adds elegance to your lifestyle.</p>
+                    <div class="collection-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Premium leather belts</li>
+                            <li><i class="fas fa-check"></i> Designer wallets</li>
+                            <li><i class="fas fa-check"></i> Watch straps</li>
+                            <li><i class="fas fa-check"></i> Stylish keychains</li>
+                        </ul>
+                    </div>
+                    <button class="collection-btn">Shop Collection</button>
+                </div>
+            </div>
+
+            <!-- Corporate Gifting -->
+            <div class="collection-card reverse">
+                <div class="collection-image">
+                    <img src="https://via.placeholder.com/600x400/8B6F47/ffffff?text=Corporate+Gifting" alt="Corporate Gifting">
+                </div>
+                <div class="collection-content">
+                    <h2>Corporate Gifting</h2>
+                    <p>Impress your clients and employees with premium leather gifts. Perfect for corporate events, employee appreciation, and special occasions.</p>
+                    <div class="collection-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Bulk order discounts</li>
+                            <li><i class="fas fa-check"></i> Custom branding</li>
+                            <li><i class="fas fa-check"></i> Elegant packaging</li>
+                            <li><i class="fas fa-check"></i> Dedicated corporate support</li>
+                        </ul>
+                    </div>
+                    <button class="collection-btn">Inquire Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasonal Collections -->
+    <section class="seasonal-section">
+        <div class="container">
+            <h2 class="section-title">Seasonal Collections</h2>
+            <div class="seasonal-grid">
+                <div class="seasonal-card">
+                    <h3>Summer 2024</h3>
+                    <p>Light and breezy leather accessories perfect for summer</p>
+                    <button>Explore</button>
+                </div>
+                <div class="seasonal-card">
+                    <h3>Fall 2024</h3>
+                    <p>Rich earth tones and durable leather for autumn</p>
+                    <button>Explore</button>
+                </div>
+                <div class="seasonal-card">
+                    <h3>Winter 2024</h3>
+                    <p>Warm and luxurious leather for the cold season</p>
+                    <button>Explore</button>
+                </div>
+                <div class="seasonal-card">
+                    <h3>Spring 2025</h3>
+                    <p>Fresh colors and new designs for spring</p>
+                    <button>Explore</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get exclusive deals and updates on new products</p>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button>Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About UCALL</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 UCALL India. All rights reserved. | Premium Leather Products</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
