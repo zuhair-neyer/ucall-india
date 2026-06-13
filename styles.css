@@ -43,13 +43,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .logo h1 {
     font-size: 28px;
     font-weight: bold;
     letter-spacing: 2px;
+    white-space: nowrap;
 }
 
 .logo span {
@@ -69,6 +71,7 @@ body {
     font-weight: 500;
     transition: all 0.3s ease;
     position: relative;
+    white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -94,6 +97,7 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .search-bar {
@@ -132,6 +136,7 @@ body {
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .nav-btn:hover {
@@ -535,10 +540,13 @@ body {
     gap: 10px;
     max-width: 500px;
     margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .newsletter-form input {
     flex: 1;
+    min-width: 200px;
     padding: 15px 20px;
     border: none;
     border-radius: 30px;
@@ -554,6 +562,7 @@ body {
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .newsletter-form button:hover {
@@ -633,6 +642,7 @@ body {
     right: -400px;
     top: 0;
     width: 400px;
+    max-width: 90vw;
     height: 100vh;
     background: white;
     box-shadow: -2px 0 10px rgba(0,0,0,0.1);
@@ -688,6 +698,7 @@ body {
     justify-content: center;
     font-size: 30px;
     color: white;
+    flex-shrink: 0;
 }
 
 .cart-item-info {
@@ -808,6 +819,8 @@ body {
     align-items: center;
     justify-content: center;
     animation: fadeIn 0.3s ease;
+    padding: 20px;
+    overflow-y: auto;
 }
 
 .modal.active {
@@ -828,9 +841,12 @@ body {
     padding: 40px;
     border-radius: 15px;
     max-width: 450px;
-    width: 90%;
+    width: 100%;
     position: relative;
     animation: slideUp 0.3s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+    margin: auto;
 }
 
 @keyframes slideUp {
@@ -898,6 +914,8 @@ body {
     align-items: center;
     margin-bottom: 20px;
     font-size: 14px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .form-options label {
@@ -998,15 +1016,10 @@ body {
     background: rgba(139, 69, 19, 0.05);
 }
 
-.payment-option input[type="radio"] {
-    cursor: pointer;
-}
-
 .order-summary {
     background: var(--light-color);
-    padding: 20px;
-    border-radius: 10px;
-    height: fit-content;
+    padding: 30px;
+    border-radius: 15px;
 }
 
 .order-summary h3 {
@@ -1014,30 +1027,29 @@ body {
     color: var(--primary-color);
 }
 
-.summary-items-container {
-    margin-bottom: 20px;
-}
-
 .summary-item {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
-    font-size: 14px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .summary-row {
     display: flex;
     justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #666;
 }
 
 .summary-row.total {
-    font-weight: 700;
     font-size: 18px;
+    font-weight: 700;
     color: var(--primary-color);
-    border: none;
-    margin-top: 10px;
+    border-top: 2px solid var(--primary-color);
+    padding-top: 12px;
+    margin-top: 12px;
 }
 
 /* Success Modal */
@@ -1050,26 +1062,11 @@ body {
     font-size: 80px;
     color: var(--success-color);
     margin-bottom: 20px;
-    animation: scaleIn 0.5s ease;
-}
-
-@keyframes scaleIn {
-    from {
-        transform: scale(0);
-    }
-    to {
-        transform: scale(1);
-    }
 }
 
 .success-content h2 {
     color: var(--success-color);
-    margin-bottom: 15px;
-}
-
-.success-content p {
-    color: #666;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .order-number {
@@ -1077,30 +1074,177 @@ body {
     padding: 15px;
     border-radius: 8px;
     margin: 20px 0;
+    font-size: 14px;
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .nav-wrapper {
+        gap: 15px;
+    }
+
+    .nav-menu {
+        gap: 20px;
+        flex: none;
+    }
+
+    .hero {
+        gap: 30px;
+    }
+
+    .hero-content h2 {
+        font-size: 36px;
+    }
+
+    .hero-img-placeholder {
+        width: 250px;
+        height: 250px;
+        font-size: 80px;
+    }
+
+    .checkout-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-wrapper {
-        flex-wrap: wrap;
-        gap: 15px;
+        width: 100%;
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    .logo h1 {
+        font-size: 24px;
     }
 
     .nav-menu {
         display: none;
     }
 
+    .nav-icons {
+        width: 100%;
+        gap: 10px;
+    }
+
     .search-bar {
-        display: none;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .search-bar input {
+        width: 100%;
     }
 
     .hero {
         grid-template-columns: 1fr;
+        gap: 40px;
         padding: 40px 0;
     }
 
     .hero-content h2 {
         font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .hero-img-placeholder {
+        width: 250px;
+        height: 250px;
+        font-size: 80px;
+    }
+
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 20px;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form input {
+        min-width: 100%;
+    }
+
+    .modal-content {
+        padding: 30px 20px;
+        max-width: 95%;
+        border-radius: 12px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .order-summary {
+        order: -1;
+    }
+
+    .cart-sidebar {
+        width: 100%;
+        right: -100%;
+    }
+
+    .cart-sidebar.active {
+        right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .logo h1 {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    .nav-btn {
+        padding: 6px 15px;
+        font-size: 13px;
+    }
+
+    .search-bar {
+        padding: 6px 10px;
+    }
+
+    .search-bar input {
+        width: 80px;
+        font-size: 12px;
+    }
+
+    .hero-content h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .hero-btn {
+        padding: 12px 30px;
+        font-size: 14px;
     }
 
     .hero-img-placeholder {
@@ -1109,55 +1253,63 @@ body {
         font-size: 60px;
     }
 
-    .products-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 20px;
+    .section-title {
+        font-size: 22px;
+        margin-bottom: 30px;
     }
 
-    .cart-sidebar {
-        width: 100%;
-        right: -100%;
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .product-image {
+        height: 200px;
+        font-size: 45px;
+    }
+
+    .product-info {
+        padding: 15px;
+    }
+
+    .product-name {
+        font-size: 16px;
+    }
+
+    .product-price .current {
+        font-size: 18px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
     }
 
     .modal-content {
-        max-width: 90%;
-        padding: 20px;
+        padding: 25px 15px;
+        max-width: 100%;
     }
 
-    .checkout-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .newsletter-form {
-        flex-direction: column;
-    }
-
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo h1 {
+    .modal-content h2 {
         font-size: 20px;
+        margin-bottom: 20px;
     }
 
-    .hero-content h2 {
-        font-size: 24px;
+    .form-group {
+        margin-bottom: 15px;
     }
 
-    .section-title {
-        font-size: 24px;
+    .form-group label {
+        font-size: 13px;
+    }
+
+    .form-group input {
+        padding: 10px;
+        font-size: 13px;
     }
 
     .filters {
         gap: 10px;
+        margin-bottom: 30px;
     }
 
     .filter-btn {
@@ -1165,15 +1317,15 @@ body {
         font-size: 12px;
     }
 
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .testimonials-grid {
-        grid-template-columns: 1fr;
-    }
-
     .footer-grid {
-        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .newsletter h2 {
+        font-size: 24px;
+    }
+
+    .newsletter p {
+        font-size: 14px;
     }
 }
